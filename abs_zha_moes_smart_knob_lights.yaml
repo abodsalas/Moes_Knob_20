@@ -17,7 +17,7 @@ blueprint:
       selector:
         device:
           integration: zha
-          manufacturer: _TZ3000_4fjiwweb
+#          manufacturer: _TZ3000_4fjiwweb
           model: TS004F
     light:
       name: Light(s)
@@ -63,7 +63,7 @@ action:
         - service_template: light.turn_on
           target: !input 'light'
           data_template:
-            brightness_step_pct: 5
+            brightness_step_pct: 20
             transition: 0.5
   - conditions:
     - '{{ command == ''step'' }}'
@@ -78,7 +78,7 @@ action:
         - service_template: light.turn_on
           target: !input 'light'
           data_template:
-            brightness_step_pct: -5
+            brightness_step_pct: -20
             transition: 0.5
   - conditions:
     - '{{ command == ''step_color_temp'' }}'
